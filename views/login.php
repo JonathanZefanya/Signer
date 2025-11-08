@@ -27,7 +27,7 @@
         @endif
         <div class="sign-in">
             <h5 class="mb-30">Sign in to your account </h5>
-            <form class="text-left simcy-form" action="<?=url("Auth@signin");?>" data-parsley-validate="" loader="true" method="POST">
+            <form class="text-left simcy-form" action="<?=url("/signin/validate");?>" data-parsley-validate="" loader="true" method="POST">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-12">
@@ -59,7 +59,7 @@
         <div class="sign-up" style="display: none;">
             <h5 class="mb-30">Create a free account</h5>
 
-            <form class="text-left simcy-form" action="<?=url("Auth@signup");?>" data-parsley-validate="" loader="true" method="POST">
+            <form class="text-left simcy-form" action="<?=url("/signup");?>" data-parsley-validate="" loader="true" method="POST">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
@@ -121,7 +121,7 @@
         @endif
         <div class="forgot-password" style="display: none;">
             <h5 class="mb-30">Forgot password? don't worry, we'll <br>send your a reset link.</h5>
-            <form class="text-left simcy-form" action="<?=url("Auth@forgot");?>" method="POST" data-parsley-validate="" loader="true">
+            <form class="text-left simcy-form" action="<?=url("/forgot");?>" method="POST" data-parsley-validate="" loader="true">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-12">

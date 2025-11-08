@@ -57,7 +57,8 @@ $(document).ready(function() {
 
 
 // Switch login cards
-$(".login-card a").click(function() {
+$(".login-card a[target]").click(function(e) {
+    e.preventDefault();
     var target = "." + $(this).attr("target");
     $(".sign-in, .forgot-password, .reset-password, .sign-up, .alert").hide();
     $(target).show();
