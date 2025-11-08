@@ -58,7 +58,7 @@ CREATE TABLE `companies` (
 
 INSERT INTO `companies` (`id`, `name`, `email`, `phone`, `reminders`) VALUES
 (0, 'System Users', '', '', 'On'),
-(1, 'Simcy Creative', 'demo@simcycreative.com', '+254720783834', 'On');
+(1, 'Zyrex Company', 'demo@zyrex.win', '+6283807914090', 'On');
 
 -- --------------------------------------------------------
 
