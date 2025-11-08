@@ -30,6 +30,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
 
             // Notifications
             Router::get('/notifications', 'Notification@get');
+            Router::post('/notifications', 'Notification@get'); // Handle AJAX calls that might post to /notifications
             Router::post('/notifications/read', 'Notification@read');
             Router::post('/notifications/count', 'Notification@count');
             Router::post('/notifications/delete', 'Notification@delete');
@@ -40,6 +41,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
             Router::post('/documents', 'Document@fetch'); // Fallback for when url() resolves to /documents instead of /documents/fetch
             Router::get('/document/{docId}/download', 'Document@download', ['as' => 'docId']);
             Router::get('/document/{document_key}', 'Document@open');
+            Router::post('/document/{document_key}', 'Document@open'); // Handle POST requests to document view
             Router::post('/documents/sign', 'Document@sign');
             Router::post('/documents/send', 'Document@send');
             Router::post('/documents/fetch', 'Document@fetch');
@@ -67,6 +69,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
 
             // Templates
             Router::get('/templates', 'Template@get');
+            Router::post('/templates', 'Template@get'); // Handle AJAX calls that might post to /templates
             Router::post('/templates/fetch', 'Template@fetch');
             Router::post('/templates/create', 'Template@create');
             Router::post('/templates/upload/file', 'Template@uploadfile');
@@ -83,6 +86,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
 
             // Requests
             Router::get('/requests', 'Request@get');
+            Router::post('/requests', 'Request@get'); // Handle AJAX calls that might post to /requests
             Router::post('/requests/send', 'Request@send');
             Router::post('/requests/delete', 'Request@delete');
             Router::post('/requests/cancel', 'Request@cancel');
@@ -96,6 +100,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
 
             // Team
             Router::get('/team', 'Team@get');
+            Router::post('/team', 'Team@get'); // Handle AJAX calls that might post to /team
             Router::post('/team/create', 'Team@create');
             Router::post('/team/update', 'Team@update');
             Router::post('/team/update/view', 'Team@updateview');
@@ -103,6 +108,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
 
             // Departments
             Router::get('/departments', 'Department@get');
+            Router::post('/departments', 'Department@get'); // Handle AJAX calls that might post to /departments
             Router::post('/departments/create', 'Department@create');
             Router::post('/departments/update', 'Department@update');
             Router::post('/departments/update/view', 'Department@updateview');
@@ -110,6 +116,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
 
             // customers
             Router::get('/customers', 'Customer@get');
+            Router::post('/customers', 'Customer@get'); // Handle AJAX calls that might post to /customers
             Router::post('/customers/create', 'Customer@create');
             Router::post('/customers/update', 'Customer@update');
             Router::post('/customers/update/view', 'Customer@updateview');
@@ -117,12 +124,14 @@ Router::csrfVerifier(new BaseCsrfVerifier());
 
             // Companies
             Router::get('/companies', 'Company@get');
+            Router::post('/companies', 'Company@get'); // Handle AJAX calls that might post to /companies
             Router::post('/companies/update', 'Company@update');
             Router::post('/companies/update/view', 'Company@updateview');
             Router::post('/companies/delete', 'Company@delete');
 
             // users
             Router::get('/users', 'User@get');
+            Router::post('/users', 'User@get'); // Handle AJAX calls that might post to /users
             Router::post('/users/create', 'User@create');
             Router::post('/users/update', 'User@update');
             Router::post('/users/update/view', 'User@updateview');
@@ -155,6 +164,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
             Router::post('/reset', 'Auth@reset');
             Router::post('/signup', 'Auth@signup');
             Router::get('/view/{document_key}', 'Guest@open');
+            Router::post('/view/{document_key}', 'Guest@open'); // Handle POST requests to guest view
             Router::post('/guest/decline', 'Guest@decline');
             Router::post('/guest/sign', 'Guest@sign');
 

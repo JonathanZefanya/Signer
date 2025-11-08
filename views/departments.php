@@ -70,8 +70,8 @@
                                         <span class="company-action dropdown-toggle" data-toggle="dropdown"><i class="ion-ios-more"></i></span>
                                         <ul class="dropdown-menu" role="menu">
                                             <li role="presentation">
-                                                <a class="fetch-display-click" data="departmentid:{{ $department['department']->id }}|csrf-token:<?=csrf_token();?>" url="<?=url("Department@updateview");?>" holder=".update-holder" modal="#update" href="">Edit</a>
-                                                <a class="send-to-server-click"  data="departmentid:{{ $department['department']->id }}|csrf-token:<?=csrf_token();?>" url="<?=url("Department@delete");?>" warning-title="Are you sure?" warning-message="This department will be deleted." warning-button="Continue" loader="true" href="">Delete</a>
+                                                <a class="fetch-display-click" data="departmentid:{{ $department['department']->id }}|csrf-token:<?=csrf_token();?>" url="<?=url("/departments/update/view");?>" holder=".update-holder" modal="#update" href="">Edit</a>
+                                                <a class="send-to-server-click"  data="departmentid:{{ $department['department']->id }}|csrf-token:<?=csrf_token();?>" url="<?=url("/departments/delete");?>" warning-title="Are you sure?" warning-message="This department will be deleted." warning-button="Continue" loader="true" href="">Delete</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -100,7 +100,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Create Department</h4>
                 </div>
-                <form class="simcy-form"action="<?=url("Department@create");?>" data-parsley-validate="" loader="true" method="POST" enctype="multipart/form-data">
+                <form class="simcy-form"action="<?=url("/departments/create");?>" data-parsley-validate="" loader="true" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <p>Fill in customer's details, an email with login details will be sent to user.</p>
                         <div class="form-group">
@@ -152,7 +152,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Update Department </h4>
                 </div>
-                <form class="update-holder simcy-form"action="<?=url("Department@update");?>" data-parsley-validate="" loader="true" method="POST" enctype="multipart/form-data">
+                <form class="update-holder simcy-form"action="<?=url("/departments/update");?>" data-parsley-validate="" loader="true" method="POST" enctype="multipart/form-data">
                     <div class="loader-box"><div class="circle-loader"></div></div>
                 </form>
             </div>
