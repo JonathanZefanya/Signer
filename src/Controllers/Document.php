@@ -39,7 +39,7 @@ class Document{
         if ($document->is_template == "Yes") { 
           $lauchLabel = "Manage Fields & Edit"; 
           $template_fields = json_decode($document->template_fields, true);
-          $savedWidth = $template_fields[0];
+          $savedWidth = (is_array($template_fields) && isset($template_fields[0])) ? $template_fields[0] : 0;
           if (empty($savedWidth)) { $savedWidth = 0; }
         }else{ 
           $lauchLabel = "Sign & Edit"; 
