@@ -158,6 +158,7 @@ Router::csrfVerifier(new BaseCsrfVerifier());
              * No login Required pages
              **/ 
             Router::get('/signin', 'Auth@get');
+            Router::post('/signin', 'Auth@get'); // Redirect POST to signin back to login page
             Router::post('/signin/validate', 'Auth@signin');
             Router::post('/forgot', 'Auth@forgot');
             Router::get('/reset/{token}', 'Auth@getreset', ['as' => 'token']);
