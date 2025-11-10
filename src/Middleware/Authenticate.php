@@ -26,7 +26,7 @@ class Authenticate implements IMiddleware {
                 $guest = serialize(array(self::getDocumentKey(), $_GET['signingKey']));
                 cookie("guest", $guest, 7);
             }
-            $request->setRewriteUrl(url('Auth@get'));
+            $request->setRewriteUrl(url('Auth@get').'?secure=true');
         }
         return $request;
 
