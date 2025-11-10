@@ -35,7 +35,7 @@ class Dashboard{
 	    						->orWhere("extension","pptx")->Where("uploaded_by", $user->id)->count("id", "files")[0]->files;
 
 	    	// pending signing requests 
-	    	$pendingRequests = Database::table("requests")->where("sent_by" , $user->id)->where("status" , "Pending")->count("id", "total")[0]->total;
+	    	$pendingRequests = Database::table("requests")->where("sender" , $user->id)->where("status" , "Pending")->count("id", "total")[0]->total;
     	}else{
 	        $fileLimit = env("BUSINESS_FILE_LIMIT");
 	        $diskLimit = env("BUSINESS_DISK_LIMIT");
